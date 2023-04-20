@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef,useEffect } from 'react';
 import axios from 'axios';
 import RecommendJobTable from '../Table/RecommendJobTable';
 import ResumeCollapse from '../ResumeCollapse/ResumeCollapse';
@@ -32,6 +32,14 @@ const InputFile = () => {
           'Content-Type': 'multipart/form-data'
         }
       });
+      const { all_cluster_jobs, predicted_cluster, resume_text, total_cluster } = response.data
+      setAllJobs(all_cluster_jobs)
+      setRecommendedJobs(all_cluster_jobs[predicted_cluster])
+      setResumeText(resume_text);
+      setPredictedCluster(predicted_cluster)
+      setTotalCluster(total_cluster)
+      setActiveCluster(predicted_cluster)
+      console.log("Recommended Jobs ",recommended_jobs)
     } catch (error) {
       console.error(error);
       setIsLoading(false);
@@ -39,13 +47,6 @@ const InputFile = () => {
       fileInputRef.current.value = null;
     }
     finally {
-      const { all_cluster_jobs, predicted_cluster, resume_text, total_cluster } = response.data
-      setAllJobs(all_cluster_jobs)
-      setRecommendedJobs(all_jobs[predicted_cluster])
-      setResumeText(resume_text);
-      setPredictedCluster(predicted_cluster)
-      setTotalCluster(total_cluster)
-      setActiveCluster(predicted_cluster)
       setIsLoading(false);
       setSelectedFile(null);
       fileInputRef.current.value = null; // Reset the input field
@@ -84,18 +85,16 @@ const InputFile = () => {
           </>
         )}
       </div>
-      {/* {recommended_jobs.length > 0 &&
+
+      {recommended_jobs && recommended_jobs.length>0 &&
        <ClusterTab predicted_cluster={predicted_cluster} handle_cluster={handle_cluster} active_cluster={active_cluster} total_cluster={total_cluster}></ClusterTab>
-      } */}
+      }
     
-      {recommended_jobs &&
+      {recommended_jobs && recommended_jobs.length>0 &&
         <RecommendJobTable jobs={recommended_jobs}></RecommendJobTable>
       }
 
     </>
-
-
-
   );
 };
 
