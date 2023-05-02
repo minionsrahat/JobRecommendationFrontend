@@ -13,7 +13,14 @@ const ResumeInput = ({ handleSubmit, fileInputRef, isLoading, handleFileChange }
                     />
                     <button type="submit" className='btn ml-3'>Upload</button>
                 </div>
+
                 <div className="container p-5 items-center justify-center flex flex-col">
+                    <ul class="steps">
+                        <li class="step step-primary">Register</li>
+                        <li class="step step-primary">Choose plan</li>
+                        <li class="step">Purchase</li>
+                        <li class="step">Receive Product</li>
+                    </ul>
                     {isLoading && (
                         <>
                             <progress className="progress w-56 "></progress>
