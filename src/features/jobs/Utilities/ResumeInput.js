@@ -16,10 +16,10 @@ const ResumeInput = ({ handleSubmit, fileInputRef, isLoading, handleFileChange }
 
                 <div className="container p-5 items-center justify-center flex flex-col">
                     <ul class="steps">
-                        <li class="step step-primary">Register</li>
-                        <li class="step step-primary">Choose plan</li>
-                        <li class="step">Purchase</li>
-                        <li class="step">Receive Product</li>
+                        <li class="step step-primary">Upload Resume</li>
+                        <li class="step step-primary">Parse Resume</li>
+                        <li class="step step-primary">Resume Accuracy</li>
+                        <li class="step">Recommended Jobs</li>
                     </ul>
                     {isLoading && (
                         <>

@@ -7,7 +7,7 @@ const Welcome = lazy(() => import('../pages/protected/Welcome'))
 const Page404 = lazy(() => import('../pages/protected/404'))
 const Blank = lazy(() => import('../pages/protected/Blank'))
 const Charts = lazy(() => import('../pages/protected/Charts'))
-const Leads = lazy(() => import('../pages/protected/Leads'))
+const Jobs = lazy(() => import('../pages/protected/Jobs'))
 const Integration = lazy(() => import('../pages/protected/Integration'))
 const Team = lazy(() => import('../pages/protected/Team'))
 const Bills = lazy(() => import('../pages/protected/Bills'))
@@ -27,8 +27,8 @@ const routes = [
     component: Welcome, // view rendered
   },
   {
-    path: '/leads',
-    component: Leads,
+    path: '/get-recommendation',
+    component: Jobs,
   },
   {
     path: '/settings-team',

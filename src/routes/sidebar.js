@@ -29,11 +29,36 @@ const routes = [
     icon: <Squares2X2Icon className={iconClasses}/>, 
     name: 'Dashboard',
   },
+
   {
-    path: '/app/leads', // url
+    path: '/app/hr-panel', // url
     icon: <InboxArrowDownIcon className={iconClasses}/>, // icon component
-    name: 'Jobs', // name that appear in Sidebar
+    name: 'HR Panel', // name that appear in Sidebar
   },
+  {
+    path: '', //no url needed as this has submenu
+    icon: <DocumentDuplicateIcon className={`${iconClasses} inline` }/>, // icon component
+    name: 'Jobs', // name that appear in Sidebar
+    submenu : [
+      {
+        path: '/app/get-recommendation', // url
+        icon: <InboxArrowDownIcon className={iconClasses}/>, // icon component
+        name: 'Get Recommendations', // name that appear in Sidebar
+      },
+      {
+        path: '/app/find-jobs', // url
+        icon: <InboxArrowDownIcon className={iconClasses}/>, // icon component
+        name: 'Find Jobs', // name that appear in Sidebar
+      },
+    
+      {
+        path: '/app/resume-Analysis', // url
+        icon: <InboxArrowDownIcon className={iconClasses}/>, // icon component
+        name: 'Resume Analysis', // name that appear in Sidebar
+      },
+    ]
+  },
+
   {
     path: '/app/charts', // url
     icon: <ChartBarIcon className={iconClasses}/>, // icon component
