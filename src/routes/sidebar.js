@@ -31,9 +31,16 @@ const routes = [
   },
 
   {
-    path: '/app/hr-panel', // url
-    icon: <InboxArrowDownIcon className={iconClasses}/>, // icon component
+    path: '', //no url needed as this has submenu
+    icon: <DocumentDuplicateIcon className={`${iconClasses} inline` }/>, // icon component
     name: 'HR Panel', // name that appear in Sidebar
+    submenu : [
+      {
+        path: '/app/sort-resume', // url
+        icon: <InboxArrowDownIcon className={iconClasses}/>, // icon component
+        name: 'Sort Resumes', // name that appear in Sidebar
+      },
+    ]
   },
   {
     path: '', //no url needed as this has submenu
