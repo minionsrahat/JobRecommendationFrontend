@@ -7,7 +7,8 @@ const Welcome = lazy(() => import('../pages/protected/Welcome'))
 const Page404 = lazy(() => import('../pages/protected/404'))
 const Blank = lazy(() => import('../pages/protected/Blank'))
 const Charts = lazy(() => import('../pages/protected/Charts'))
-const Jobs = lazy(() => import('../pages/protected/Jobs'))
+const JobsRecommendation = lazy(() => import('../pages/protected/Jobs'))
+const FindJobs = lazy(() => import('../pages/protected/FindJobs'))
 const Integration = lazy(() => import('../pages/protected/Integration'))
 const Team = lazy(() => import('../pages/protected/Team'))
 const Bills = lazy(() => import('../pages/protected/Bills'))
@@ -28,7 +29,11 @@ const routes = [
   },
   {
     path: '/get-recommendation',
-    component: Jobs,
+    component: JobsRecommendation,
+  },
+  {
+    path: '/find-jobs',
+    component: FindJobs,
   },
   {
     path: '/settings-team',
