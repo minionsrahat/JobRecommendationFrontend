@@ -1,12 +1,10 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import InputFileCard from "../../components/Cards/InputFileCard"
-import ResumeInput from "./Utilities/ResumeInput"
+import escapeRegExp from 'escape-string-regexp';
 import ClusterTab from "./Utilities/ClusterTab"
 import CommonTitleCard from "../../components/Cards/CommonTitleCard"
-import RecommendationTable from "./RecommendationTable"
-import ResumeInfoCard from "./components/ResumeInfoCard"
-import ResumeAccuracy from "./components/ResumeAccuracy"
+
 import SearchQueryInputField from './Utilities/SearchQueryInputField';
 import { useEffect } from 'react';
 import FindJobsTable from './FindJobsTable';
@@ -41,61 +39,42 @@ const SearchJob = () => {
 
 
     const handleSearch = () => {
-        console.log("Active Cluster:", active_cluster)
-        console.log("Search:", skillsInput.current.value)
-        let filteredJobs = []
-        if (titleInput.current.value.trim() !== '') {
-            const titleSearchRegex = new RegExp(titleInput.current.value, 'i');
-            filteredJobs = all_jobs[active_cluster].filter((job) => {
-                const jobTitle = job.position.toLowerCase();
-                return (
-                    titleSearchRegex.test(jobTitle)
-                );
-            });
+        console.log("Active Cluster:", active_cluster);
+        console.log("Search:", skillsInput.current.value);
+      
+        const titleInputValue = titleInput.current.value.trim();
+        const companyInputValue = companyInput.current.value.trim();
+        const skillsInputValue = skillsInput.current.value.trim();
+      
+        let filteredJobs = all_jobs[active_cluster];
+      
+        if (titleInputValue !== '') {
+          const titleSearchRegex = new RegExp(titleInputValue, 'i');
+          filteredJobs = filteredJobs.filter((job) => {
+            const jobTitle = job.position.toLowerCase();
+            return titleSearchRegex.test(jobTitle);
+          });
         }
-        if (companyInput.current.value.trim() !== '') {
-            const companySearchRegex = new RegExp(companyInput.current.value.trim(), 'i');
-            let jobs = []
-            if (filteredJobs.length === 0) {
-                jobs = all_jobs[active_cluster]
-            }
-            else {
-                jobs = filteredJobs
-            }
-            filteredJobs = jobs.filter((job) => {
-                const jobCompany = job.company.toLowerCase();
-                return (
-                    companySearchRegex.test(jobCompany)
-                );
-            });
-
-          console.log(filteredJobs)
+      
+        if (companyInputValue !== '') {
+          const companySearchRegex = new RegExp(companyInputValue, 'i');
+          filteredJobs = filteredJobs.filter((job) => {
+            const jobCompany = job.company.toLowerCase();
+            return companySearchRegex.test(jobCompany);
+          });
         }
-        if (skillsInput.current.value.trim() !== '') {
-            console.log('Hello')
-            const skillsSearchRegex = new RegExp(skillsInput.current.value.trim(), 'i');
-            let jobs = []
-            if (filteredJobs.length === 0) {
-                jobs = all_jobs[active_cluster]
-            }
-            else {
-                jobs = filteredJobs
-            }
-            filteredJobs = jobs.filter((job) => {
-                const jobSkills = job.skill.toLowerCase();
-                return (
-                    skillsSearchRegex.test(jobSkills)
-                );
-            });
+      
+        if (skillsInputValue !== '') {
+            const escapedSkillsInputValue = escapeRegExp(skillsInputValue);
+          const skillsSearchRegex = new RegExp(escapedSkillsInputValue, 'i');
+          filteredJobs = filteredJobs.filter((job) => {
+            const jobSkills = job.skill.toLowerCase();
+            return skillsSearchRegex.test(jobSkills);
+          });
         }
-        if(titleInput.current.value.trim() === '' && companyInput.current.value.trim() === ''&& skillsInput.current.value.trim() === ''){
-            filteredJobs=all_jobs[active_cluster]
-        }
-        setActiveClusterJobs(filteredJobs)
-
-
-
-    };
+        setActiveClusterJobs(filteredJobs);
+      };
+      
 
     useEffect(() => {
         setActiveClusterJobs(all_jobs[active_cluster]);
@@ -107,7 +86,6 @@ const SearchJob = () => {
         console.log("New Value ", new_cluster_val);
         setActiveCluster(new_cluster_val);
     };
-
 
     return (
         <>

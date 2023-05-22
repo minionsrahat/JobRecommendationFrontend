@@ -94,7 +94,7 @@ function Leads() {
         <>
             <InputFileCard title="Current Jobs" InputComponent={<ResumeInput handleSubmit={handleResumeSubmit}
                 fileInputRef={fileInputRef}
-                isLoading={isLoading} handleFileChange={handleFileChange} />}></InputFileCard>
+                handleFileChange={handleFileChange} />}></InputFileCard>
 
             {resume && <ResumeInfoCard resume={resume}></ResumeInfoCard>}
             {resume && <ResumeAccuracy score={resume_score}

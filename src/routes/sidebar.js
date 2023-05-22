@@ -38,7 +38,7 @@ const routes = [
       {
         path: '/app/sort-resume', // url
         icon: <InboxArrowDownIcon className={iconClasses}/>, // icon component
-        name: 'Sort Resumes', // name that appear in Sidebar
+        name: 'Sort Resumes Based on Job Description', // name that appear in Sidebar
       },
     ]
   },

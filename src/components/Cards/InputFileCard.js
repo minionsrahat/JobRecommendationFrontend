@@ -1,4 +1,5 @@
 import React from 'react';
+import Subtitle from '../Typography/Subtitle';
 
 const InputFileCard = ({title, children, InputComponent}) => {
     return (
