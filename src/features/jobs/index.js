@@ -29,7 +29,7 @@ function Leads() {
     };
 
     const handleNavigation = (job_id) => {
-        navigate(`/get_job_by_id/${job_id}`);
+        navigate(`get_job_by_id/${job_id}`);
       };
 
 
@@ -107,6 +107,8 @@ function Leads() {
             {resume && <ResumeInfoCard resume={resume}></ResumeInfoCard>}
             {resume && <ResumeAccuracy score={resume_score}
                 handleRecommendationRequest={handleRecommendationRequest}></ResumeAccuracy>}
+
+
             <CommonTitleCard title="Recommended Jobs">
                 {recommended_jobs && recommended_jobs.length > 0 &&
                     <>

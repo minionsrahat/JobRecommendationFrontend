@@ -60,7 +60,7 @@ const routes = [
       },
     
       {
-        path: '/app/resume-Analysis', // url
+        path: '/app/resume-analysis', // url
         icon: <InboxArrowDownIcon className={iconClasses}/>, // icon component
         name: 'Resume Analysis', // name that appear in Sidebar
       },
