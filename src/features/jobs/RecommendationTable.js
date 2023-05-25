@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const RecommendationTable = ({ recommended_jobs }) => {
+const RecommendationTable = ({ recommended_jobs,handleNavigation }) => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const jobsPerPage = 5;
+    
 
     // Logic to handle page change
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
 
+    
     // Logic to calculate the current jobs to display
     const indexOfLastJob = currentPage * jobsPerPage;
     const indexOfFirstJob = indexOfLastJob - jobsPerPage;
@@ -52,6 +55,9 @@ const RecommendationTable = ({ recommended_jobs }) => {
                                     <td>{wrapText(row.company, 50)}</td>
                                     <td>{row.score.toFixed(4)}</td>
                                     <td>
+                                        <button onClick={()=>handleNavigation(row.position)} className="btn mr-1">
+                                            Details
+                                        </button>
                                         <a href={row.link} target="__blank" className="btn">
                                             Apply
                                         </a>

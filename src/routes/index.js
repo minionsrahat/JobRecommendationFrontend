@@ -10,6 +10,7 @@ const Charts = lazy(() => import('../pages/protected/Charts'))
 const JobsRecommendation = lazy(() => import('../pages/protected/Jobs'))
 const FindJobs = lazy(() => import('../pages/protected/FindJobs'))
 const SortResume = lazy(() => import('../pages/protected/SortResume'))
+const JobDetails = lazy(() => import('../pages/protected/JobDetails'))
 const Integration = lazy(() => import('../pages/protected/Integration'))
 const Team = lazy(() => import('../pages/protected/Team'))
 const Bills = lazy(() => import('../pages/protected/Bills'))
@@ -39,6 +40,14 @@ const routes = [
   {
     path: '/sort-resume',
     component: SortResume,
+  },
+  {
+    path: 'find-jobs/get_job_by_id/:job_id',
+    component: JobDetails,
+  },
+  {
+    path: 'get-recommendation/get_job_by_id/:job_id',
+    component: JobDetails,
   },
   {
     path: '/settings-team',

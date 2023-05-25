@@ -7,6 +7,7 @@ import CommonTitleCard from "../../components/Cards/CommonTitleCard"
 import RecommendationTable from "./RecommendationTable"
 import ResumeInfoCard from "./components/ResumeInfoCard"
 import ResumeAccuracy from "./components/ResumeAccuracy"
+import { useNavigate } from 'react-router-dom';
 
 function Leads() {
 
@@ -20,11 +21,18 @@ function Leads() {
     const [recommended_jobs, setRecommendedJobs] = useState([])
     const [all_jobs, setAllJobs] = useState([])
     const [resume_score, setResumeScore] = useState(null)
+    const navigate = useNavigate();
 
 
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]);
     };
+
+    const handleNavigation = (job_id) => {
+        navigate(`/get_job_by_id/${job_id}`);
+      };
+
+
 
     const handleRecommendationRequest = async (event) => {
         event.preventDefault();
@@ -114,7 +122,7 @@ function Leads() {
 
                 }
                 {/* Jobs List in table format loaded from slice after api call */}
-                <RecommendationTable recommended_jobs={recommended_jobs}></RecommendationTable>
+                <RecommendationTable handleNavigation={handleNavigation} recommended_jobs={recommended_jobs}></RecommendationTable>
             </CommonTitleCard>
         </>
     )

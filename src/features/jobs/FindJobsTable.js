@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const FindJobsTable = ({ recommended_jobs }) => {
+
+    const navigate = useNavigate();
+
+    const handleNavigation = (job_id) => {
+        navigate(`get_job_by_id/${job_id}`);
+      };
 
     const [currentPage, setCurrentPage] = useState(1);
     const jobsPerPage = 5;
@@ -54,6 +61,7 @@ const FindJobsTable = ({ recommended_jobs }) => {
                                     <td>{wrapText(row['Minimum degree level'], 50)}</td>
                                     <td>{wrapText(row['skill'], 50)}</td>
                                     <td>
+                                        <button onClick={()=>handleNavigation(row.position)} className="btn mr-1" >Details</button>
                                         <a href={row.link} target="__blank" className="btn">
                                             Apply
                                         </a>

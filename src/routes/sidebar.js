@@ -29,6 +29,7 @@ const routes = [
     icon: <Squares2X2Icon className={iconClasses}/>, 
     name: 'Dashboard',
   },
+  
 
   {
     path: '', //no url needed as this has submenu
