@@ -58,6 +58,7 @@ const ParseResumeTable = ({ parsed_resumes }) => {
             </div>
 
             {/* Pagination */}
+            <div className='text-center mt-4'>
             <div className="btn-group">
                 {pageNumbers.map((pageNumber) => (
                     <button
@@ -69,6 +70,8 @@ const ParseResumeTable = ({ parsed_resumes }) => {
                     </button>
                 ))}
             </div>
+            </div>
+
 
         </>
     );

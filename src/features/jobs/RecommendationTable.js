@@ -51,8 +51,8 @@ const RecommendationTable = ({ recommended_jobs,handleNavigation }) => {
                         {currentJobs.map((row) => {
                             return (
                                 <tr key={row.id}>
-                                    <td>{wrapText(row.position, 50)}</td>
-                                    <td>{wrapText(row.company, 50)}</td>
+                                    <td>{wrapText(row.position, 45)}</td>
+                                    <td>{wrapText(row.company, 45)}</td>
                                     <td>{row.score.toFixed(4)}</td>
                                     <td>
                                         <button onClick={()=>handleNavigation(row.position)} className="btn mr-1">
@@ -70,6 +70,7 @@ const RecommendationTable = ({ recommended_jobs,handleNavigation }) => {
             </div>
 
             {/* Pagination */}
+            <div className='text-center mt-4'>
             <div className="btn-group">
                 {pageNumbers.map((pageNumber) => (
                     <button
@@ -81,6 +82,8 @@ const RecommendationTable = ({ recommended_jobs,handleNavigation }) => {
                     </button>
                 ))}
             </div>
+            </div>
+
 
         </>
     );

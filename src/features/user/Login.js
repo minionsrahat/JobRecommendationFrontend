@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import LandingIntro from './LandingIntro'
 import ErrorText from  '../../components/Typography/ErrorText'
 import InputText from '../../components/Input/InputText'
+import axios from 'axios'
 
 function Login(){
 
@@ -15,7 +16,7 @@ function Login(){
     const [errorMessage, setErrorMessage] = useState("")
     const [loginObj, setLoginObj] = useState(INITIAL_LOGIN_OBJ)
 
-    const submitForm = (e) =>{
+    const submitForm =async (e) =>{
         e.preventDefault()
         setErrorMessage("")
 
@@ -23,10 +24,22 @@ function Login(){
         if(loginObj.password.trim() === "")return setErrorMessage("Password is required! (use any value)")
         else{
             setLoading(true)
-            // Call API to check user credentials and save token in localstorage
-            localStorage.setItem("token", "DumyTokenHere")
-            setLoading(false)
-            window.location.href = '/app/welcome'
+            const response = await axios.post('http://127.0.0.1:5000/login', loginObj, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            const { accessToken, name, error, message } = response.data
+            if (error) {
+                setErrorMessage(message)
+                setLoading(false)
+            }
+            else{
+                localStorage.setItem("token", JSON.stringify(accessToken))
+                
+                window.location.href = '/app/welcome'
+            }
+           
         }
     }
 

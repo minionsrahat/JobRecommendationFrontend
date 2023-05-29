@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const SortedResumeTable = ({ sorted_resumes }) => {
 
     const [currentPage, setCurrentPage] = useState(1);
-    const ResumesPerPage = 5;
+    const ResumesPerPage = 15;
 
     // Logic to handle page change
     const handlePageChange = (pageNumber) => {
@@ -55,6 +55,7 @@ const SortedResumeTable = ({ sorted_resumes }) => {
             </div>
 
             {/* Pagination */}
+            <div className='text-center mt-4'>
             <div className="btn-group">
                 {pageNumbers.map((pageNumber) => (
                     <button
@@ -66,6 +67,8 @@ const SortedResumeTable = ({ sorted_resumes }) => {
                     </button>
                 ))}
             </div>
+            </div>
+
 
         </>
     );
