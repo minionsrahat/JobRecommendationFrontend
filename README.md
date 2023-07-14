@@ -1,87 +1,53 @@
+# Welcome to JOBQUEST - A Job Recommendation System
 
-![Logo](https://ik.imagekit.io/vu5t8xb15vzcx/tr:h-100/android-chrome-512x512_EiumvYoXeA.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669548997842)
+JOBQUEST is a Job Recommendation System that aims to provide accurate and suitable job recommendations to job seekers based on their profile and preferences. The system offers the following key features:
 
-## Daisy UI Admin Dashboard Template - DashWind 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+- Recommend a job based on the job seeker’s resume: The system analyzes the job seeker’s resume, including their skills, qualifications, and experience, to provide job recommendations that align with their profile. The recommendation algorithm considers the relevance and compatibility of job postings with the job seeker’s resume, ensuring accurate and suitable recommendations.
 
-A free admin dashboard template using **Daisy UI** and React js. With the help of Dasisy UI, it comes with **fully customizable and themable CSS** and power of Tailwind CSS utility classes. It also comes with **redux toolkit** and other libraries configured.
+- Recommend a job based on a custom search query: Users can enter specific search criteria, such as job title, location, industry, or desired salary, to generate a list of job recommendations that match their query.
 
+- Provide resume accuracy measurements: The system evaluates the accuracy of the job seeker’s uploaded resume and provides measurements or metrics to assess its completeness, relevance, and alignment with industry standards. This includes a scoring system, suggestions for improvement, or comparisons with successful resumes in similar job roles.
 
-## Preview
+- Recommend a job based on the job profile created in our system: Job seekers can create a comprehensive job profile that includes their skills, qualifications, preferences, and career goals. Based on the job profile, the system recommends relevant job opportunities that match the job seeker’s profile, considering factors such as their desired job title, industry, location, or company culture.
 
-[Live preview](https://tailwind-dashboard-template-dashwind.vercel.app/)
+- Provide facilities for HR to rank resumes based on job descriptions: The system offers features for HR professionals to evaluate and rank resumes based on job descriptions and requirements. HR users can compare resumes, consider relevant skills and qualifications, and assign rankings or scores to prioritize candidates for further consideration.
 
-
-![App Screenshot](https://ik.imagekit.io/vu5t8xb15vzcx/Screenshot_2023-01-20_at_12.36.43_PM_UUUlT44mZS.png?ik-sdk-version=javascript-1.4.3&updatedAt=1674198435625)
-
-
+If you have any questions or need further information, please feel free to reach out.
 
 
-## Features
+## Technology Used
 
-- **Light/dark** mode toggle
-- Token based user **authentication**
-- **Submenu support** in sidebar
-- Store management using **redux toolkit**
-- **Daisy UI** components and **Tailwind** support
-- **Right and left sidebar**, Universal loader, notifications, **global modal**, **chart js 2**  and other components
+- React
+- Daisy UI
+- React Router
+- React Authentication
+- JWT
+- Flask
+- TensorFlow
+- Kmeans
+- Classification
+- Hybrid Sim
+- Nlp
+- Spacy
+- Numpy,Pandas
+- MongoDB
 
 
-## Installation
+## Client Side Installation
 
-Go to project directory and run (make sure you have node installed first)
+To get started with this, follow these steps:
 
-```bash
-  npm install
-  npm start
+
 ```
-    
-## Core Libraries Used
+$ git clone https://github.com/minionsrahat/JobRecommendationFrontend
+$ cd project
+$ npm install
 
-- [React JS v18.2.0](https://reactjs.org/)
-- [React Router v6.4.3](https://reactrouter.com/en/main)
-- [Tailwind CSS v3.2.4](https://tailwindcss.com/)
-- [Daisy UI v2.41.0](https://daisyui.com/)
-- [HeroIcons](https://heroicons.com/)
-- [Redux toolkit v1.9](https://redux-toolkit.js.org/)
-- [React ChartJS 2 v5](https://react-chartjs-2.js.org/)
+```
 
-## Documentation
+## Run Project
 
-[Documentation](https://tailwind-dashboard-template-dashwind.vercel.app/documentation)
+```
+$ npm start
 
-## Page Examples
-
-|                          |                               |
-:-------------------------:|:-------------------------:
-![Leads Screenshot](https://ik.imagekit.io/vu5t8xb15vzcx/Screenshot_2023-01-20_at_12.41.27_PM_yGQFBCJPNA.png?ik-sdk-version=javascript-1.4.3&updatedAt=1674198696439) | ![Setting Screenshot](https://ik.imagekit.io/vu5t8xb15vzcx/Screenshot_2023-01-20_at_12.43.25_PM_xZBThuZdU.png?ik-sdk-version=javascript-1.4.3&updatedAt=1674198832089) 
-![Login Screenshot](https://ik.imagekit.io/vu5t8xb15vzcx/Screenshot_2023-01-20_at_12.42.50_PM_OahsZofhp.png?ik-sdk-version=javascript-1.4.3&updatedAt=1674198831699) | ![Register Screenshot](https://ik.imagekit.io/vu5t8xb15vzcx/Screenshot_2023-01-20_at_12.43.00_PM_1fkpMRG90.png?ik-sdk-version=javascript-1.4.3&updatedAt=1674198831908)
-
-
-
-
-
-## Preview
-
-[Live preview](https://tailwind-dashboard-template-dashwind.vercel.app/)
-
-
-## Roadmap
-
-- Addition of more pages
-
-- Seperate templates based on business functions like CRM, Sales, Project Management
-
-
-## Contributing
-
-Contributions are always welcome!
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-## Feedback
-
-If you have any feedback, please reach out to us
-
+```

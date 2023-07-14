@@ -67,11 +67,11 @@ const routes = [
     ]
   },
 
-  {
-    path: '/app/charts', // url
-    icon: <ChartBarIcon className={iconClasses}/>, // icon component
-    name: 'Charts', // name that appear in Sidebar
-  }, 
+  // {
+  //   path: '/app/charts', // url
+  //   icon: <ChartBarIcon className={iconClasses}/>, // icon component
+  //   name: 'Charts', // name that appear in Sidebar
+  // }, 
 ]
 
 export default routes
